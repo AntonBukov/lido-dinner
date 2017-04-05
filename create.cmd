@@ -1,0 +1,1 @@
+mvn archetype:generate -DgroupId=lw-projects -DartifactId=lido-lw-dinner -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
