@@ -8,21 +8,45 @@
     <name>lido-dinner Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <properties>
-        <java-version>1.7</java-version>
-        <spring.version>4.3.1.RELEASE</spring.version>
+        <java.version>1.7</java.version>
+        <spring.mvc>4.3.7.RELEASE</spring.mvc>
+        <spring.data>1.9.0.RELEASE</spring.data>
+        <javax.servlet>3.0.1</javax.servlet>
+        <mysql.version>5.1.30</mysql.version>
+        <hb.manager>5.1.0.Final</hb.manager>
+        <spring.test>3.2.4.RELEASE</spring.test>
+        <junit.version>4.11</junit.version>
         <jackson.version>2.7.5</jackson.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.mvc}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring.data}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hb.manager}</version>
         </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
+            <version>${javax.servlet}</version>
         </dependency>
 
         <dependency>
@@ -41,6 +65,13 @@
     <build>
 
         <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
